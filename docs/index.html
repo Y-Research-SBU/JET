@@ -42,11 +42,11 @@ h3 {
 }
 
 a:link, a:visited {
-    color: #5b21b6;
+    color: #1E40AF;
     text-decoration: none;
 }
 a:hover {
-    color: #7c3aed;
+    color: #2563EB;
 }
 
 .paper-title {
@@ -155,7 +155,7 @@ pre {
 }
 
 .paper-btn:hover, .github-btn:hover {
-    color: #7c3aed;
+    color: #2563EB;
     transform: translateY(-2px);
 }
 
@@ -215,8 +215,8 @@ pre {
 
 /* Highlight box */
 .highlight-box {
-    background-color: #f8f5ff;
-    border-left: 4px solid #5b21b6;
+    background-color: #EDF2FB;
+    border-left: 4px solid #1E40AF;
     padding: 24px 30px;
     border-radius: 0 6px 6px 0;
     margin: 24px 0;
@@ -225,7 +225,7 @@ pre {
 }
 
 .highlight-box h4 {
-    color: #5b21b6;
+    color: #1E40AF;
     margin-bottom: 8px;
     margin-top: 18px;
     font-size: 18px;
@@ -244,10 +244,10 @@ pre {
 }
 
 .key-point {
-    background-color: #f8f5ff;
+    background-color: #EDF2FB;
     border-radius: 8px;
     padding: 16px 18px;
-    border: 1px solid #e5e1f0;
+    border: 1px solid #bfdbfe;
 }
 
 .key-point .icon {
@@ -288,9 +288,9 @@ table.results td {
 }
 
 table.results thead th {
-    background: #f8f5ff;
+    background: #EDF2FB;
     font-weight: 600;
-    border-bottom: 2px solid #5b21b6;
+    border-bottom: 2px solid #1E40AF;
 }
 
 table.results .method-cell {
@@ -304,21 +304,21 @@ table.results .model-cell {
 }
 
 table.results tr.ours {
-    background: #f3eaff;
+    background: #dbeafe;
     font-weight: 600;
 }
 
 table.results .best {
-    color: #5b21b6;
+    color: #1E40AF;
     font-weight: 700;
 }
 
 blockquote {
-    background-color: #f8f5ff;
+    background-color: #EDF2FB;
     padding: 20px 26px;
     margin: 16px 0;
     border-radius: 6px;
-    border-left: 4px solid #5b21b6;
+    border-left: 4px solid #1E40AF;
     font-size: 18px;
     line-height: 1.5em;
 }
@@ -356,18 +356,97 @@ blockquote {
 #overview .overview-points li:first-child {
     margin-top: 4px;
 }
+
+/* Side-by-side figure + text rows; flip orientation with .fig-right */
+.fig-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    margin: 32px 0;
+}
+.fig-row.fig-right .fig-col {
+    order: 2;
+}
+.fig-row .fig-col img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.fig-row .text-col h3 {
+    margin-top: 0;
+}
+.fig-row .text-col p {
+    margin: 8px 0;
+    line-height: 1.55;
+}
+@media (max-width: 760px) {
+    .fig-row { grid-template-columns: 1fr; gap: 16px; }
+    .fig-row.fig-right .fig-col { order: 0; }
+}
+
+/* Compact variant: smaller image, longer prose; lets the text column drive row height */
+.fig-compact {
+    display: grid;
+    grid-template-columns: 38fr 62fr;
+    gap: 26px;
+    align-items: center;
+    margin: 28px 0;
+}
+.fig-compact.fig-right .fig-col {
+    order: 2;
+}
+.fig-compact .fig-col img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.fig-compact .text-col h3 {
+    margin-top: 0;
+}
+.fig-compact .text-col p {
+    margin: 6px 0;
+    line-height: 1.55;
+    font-size: 17px;
+}
+@media (max-width: 760px) {
+    .fig-compact { grid-template-columns: 1fr; gap: 16px; }
+    .fig-compact.fig-right .fig-col { order: 0; }
+}
+
+/* Hero figure (pipeline) just under the buttons */
+.hero-figure {
+    margin: 12px 0 8px 0;
+}
+.hero-figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.hero-caption {
+    text-align: center;
+    margin: 8px 0 16px 0;
+    line-height: 1.5em;
+}
+
+.analysis-q {
+    font-size: 1.15em;
+    font-weight: 600;
+    color: #1E40AF;
+    margin: 28px 0 6px 0;
+}
 </style>
 
 <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
 
 <head>
     <meta charset="UTF-8">
-    <title>JET: Let EEG Models Learn EEG — Just EEG Transformer for Flow-Matching EEG Generation</title>
+    <title>Let EEG Models Learn EEG</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:description" content="JET — a flow-matching framework for high-fidelity EEG generation that models neural signals as continuous trajectories."/>
+    <meta property="og:description" content="Let EEG Models Learn EEG — JET, a conditional flow-matching framework for high-fidelity EEG generation."/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="JET: Let EEG Models Learn EEG — Just EEG Transformer for Flow-Matching EEG Generation">
+    <meta name="twitter:title" content="Let EEG Models Learn EEG">
 </head>
 
 <body>
@@ -378,15 +457,15 @@ blockquote {
     <!-- ============================================================ -->
     <div class="paper-title">
         <h1>
-            <font color="#5b21b6">Let EEG Models Learn EEG:</font><br/>
-            Just EEG Transformer for Flow-Matching EEG Generation
+            <font color="#1E40AF">Let EEG Models Learn EEG</font>
         </h1>
     </div>
 
     <div id="authors">
         <center>
             <div class="author-row-new">
-                <a>Yifan Wang<sup>1</sup></a>,
+                <!-- <a>Yifan Wang<sup>1</sup></a>, -->
+                <a href="https://yfwang.me/" target="_blank" rel="noopener noreferrer">Yifan Wang<sup>1</sup></a>
                 <a>Yijia Ma<sup>2</sup></a>,
                 <a>Wen Li<sup>2</sup></a>,
                 <a href="https://chenyuyou.me/" target="_blank" rel="noopener noreferrer">Chenyu You<sup>1</sup></a>
@@ -401,7 +480,7 @@ blockquote {
 
         <div style="clear: both">
             <div class="paper-btn-parent">
-                <a class="paper-btn" href="https://arxiv.org/abs/2026.XXXXX">
+                <a class="paper-btn" href="">
                     <span class="ai ai-arxiv"></span>
                     Paper
                 </a>
@@ -411,17 +490,19 @@ blockquote {
                 </a>
             </div>
         </div>
-
-        <!-- Teaser Figure -->
-        <div class="figure">
-            <img src="figures/toy_3x4.svg" alt="JET Teaser — flow matching vs. GAN vs. diffusion">
-        </div>
-        <p class="caption text-center">
-            <b>Why flow matching for EEG?</b> GANs map latent noise directly to data space, diffusion models rely on stochastic denoising dynamics,
-            while <b>flow matching</b> learns a smooth time-dependent vector field whose integral curves realize optimal transport
-            from a dispersed source to the target distribution — a natural fit for the continuous evolution of neural signals.
-        </p>
     </div>
+
+    <!-- ============================================================ -->
+    <!-- HERO: JET PIPELINE FIGURE                                    -->
+    <!-- ============================================================ -->
+    <div class="hero-figure">
+        <img src="figures/main.svg" alt="JET pipeline">
+    </div>
+    <p class="hero-caption">
+        <b>JET pipeline.</b> Multi-channel EEG is generated by learning a continuous vector field
+        <em>v</em>(<em>x<sub>t</sub></em>, <em>t</em>) via flow matching, conditioned on pathological states and
+        regularized by structure-preserving constraints on spectral, temporal, and statistical properties.
+    </p>
 
     <!-- ============================================================ -->
     <!-- NEWS                                                         -->
@@ -431,7 +512,7 @@ blockquote {
         <hr>
         <div class="row">
             <div class="news-item"><span class="material-icons"> event </span> [May 2026] Code and project page released.</div>
-            <div class="news-item"><span class="material-icons"> event </span> [Jan 2026] JET accepted at ICML 2026.</div>
+            <div class="news-item"><span class="material-icons"> event </span> [April 2026] JET accepted at ICML 2026.</div>
         </div>
     </section>
 
@@ -445,15 +526,16 @@ blockquote {
             High-fidelity EEG generation is critical for alleviating data scarcity and addressing privacy constraints in large-scale neural modeling.
         </p>
         <blockquote class="overview-thesis">
-            Existing methods formulate EEG generation via <em>discrete</em> denoising objectives, which inadequately reflect the inherently
-            <em>continuous</em> temporal dynamics and spectral structure of neural activity.
+            Despite recent progress, most existing approaches formulate EEG generation via <em>discrete</em>
+            denoising objectives, which inadequately reflect the inherently <em>continuous</em> temporal
+            dynamics and spectral structure of neural activity.
         </blockquote>
         <p class="overview-lead">
             <b>JET</b> is a generative framework based on conditional flow matching that models EEG as raw sequences evolving along
-            continuous trajectories — see <b>Method</b>; <b>TUAB</b> / <b>TUEV</b> / <b>TUSZ</b> experiments in <b>Results</b>.
+            continuous trajectories.
         </p>
         <ul class="overview-points">
-            <li><b>Continuous formulation.</b> Learn a smooth vector field that transports noise to the EEG data distribution — no discretized denoising, no domain-specific representations.</li>
+            <li><b>Continuous formulation.</b> Learn a smooth vector field that transports noise to the EEG data distribution without discretized denoising or domain-specific representations.</li>
             <li><b>Principled constraints.</b> Spectral, temporal-stationarity, and signal-statistics losses keep the learned dynamics consistent with EEG.</li>
             <li><b>State of the art.</b> Reduces <b>TS-FID by over 40%</b> vs. strong baselines on three large-scale benchmarks.</li>
         </ul>
@@ -466,23 +548,41 @@ blockquote {
         <h2>Method</h2>
         <hr>
 
-        <h3>JET Pipeline</h3>
-        <p class="caption text-center">
-            JET generates multi-channel EEG by learning a continuous vector field <em>v</em>(<em>x<sub>t</sub></em>, <em>t</em>) via flow matching,
-            conditioned on pathological states and regularized by structure-preserving constraints that encode spectral,
-            temporal, and statistical properties of EEG signals.
-        </p>
-        <div class="figure">
-            <img src="figures/main.svg" alt="JET pipeline">
-        </div>
-
         <h3>Architecture</h3>
-        <p class="caption text-center">
-            <b>Just EEG Transformer.</b> Raw EEG is processed via a patch-based Transformer backbone. Input signals are tokenized,
-            processed through stacked self-attention layers to capture spatiotemporal dependencies, and reconstructed to predict the target vector field.
-        </p>
         <div class="figure">
             <img src="figures/structure.svg" alt="JET architecture">
+        </div>
+        <p>
+            <b>Just EEG Transformer (JET).</b> JET models multi-channel EEG directly as raw continuous sequences,
+            avoiding handcrafted feature extraction such as time frequency transforms or predefined adjacency
+            matrices. Each EEG segment is split into non-overlapping temporal patches along the time axis. Every
+            patch is linearly projected into an embedding while preserving channel identity, and learnable
+            positional embeddings encode temporal order. The resulting token sequence is processed by a stack of
+            standard Transformer blocks with multi-head self-attention and feed-forward layers. Conditioning
+            information, including diffusion time and class label, is injected via adaptive layer normalization,
+            whose scale and shift parameters are predicted from the sum of the time embedding and the class
+            embedding. To handle the severe class imbalance of clinical EEG, JET also uses an adaptive
+            class-balanced sampler that assigns each training sample a probability inversely proportional to its
+            class count, encouraging robust representations of under-represented pathological patterns.
+        </p>
+
+        <div class="fig-compact fig-right">
+            <div class="fig-col">
+                <img src="figures/toy_3x4.svg" alt="GAN vs. Diffusion vs. Flow Matching toy comparison">
+            </div>
+            <div class="text-col">
+                <h3>Why flow matching for EEG?</h3>
+                <p>
+                    <b>GANs</b> map latent noise directly to data space; <b>diffusion models</b> rely on
+                    stochastic denoising dynamics. <b>Flow matching</b> instead learns a smooth, time-dependent
+                    vector field whose integral curves realize optimal transport from a dispersed source to the
+                    target distribution.
+                </p>
+                <p>
+                    We argue that effective EEG generation requires models that operate directly on the
+                    continuous evolution of neural signals.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -537,40 +637,120 @@ blockquote {
             </table>
         </div>
 
-        <h3>Spectral Structure</h3>
-        <p class="caption text-center">
-            <b>Power spectral density.</b> JET accurately reconstructs the 1/<em>f</em> spectral slope and distinct oscillatory peaks,
-            demonstrating high spectral fidelity across TUAB, TUEV, and TUSZ.
+        <h3>Physiological Analysis</h3>
+        <p>
+            To go beyond aggregate metrics and assess whether JET preserves key physiological structure, we conduct
+            a fine-grained analysis along three fundamental dimensions: spectral structure, temporal dynamics, and
+            statistical distributions. Together, these analyses examine whether the proposed constraints
+            effectively address the limitations observed in prior generative paradigms.
         </p>
-        <div class="figure">
-            <img src="figures/power_spectral_density.svg" alt="Power spectral density comparison">
+
+        <div class="analysis-q">▷ Can JET Overcome Spectral Bias under Power-Law Scaling?</div>
+        <p>
+            We first examine whether JET preserves the power-law spectral structure (1/<em>f</em>^χ) and
+            low-energy high-frequency components of EEG signals. Conventional objectives often suppress these
+            components due to spectral bias, leading to oversmoothed generations. The figure compares the
+            power spectral density (PSD) of generated and real signals, revealing strong alignment across
+            frequency bands.
+        </p>
+        <div class="fig-compact">
+            <div class="fig-col">
+                <img src="figures/power_spectral_density.svg" alt="Power spectral density">
+            </div>
+            <div class="text-col">
+                <p>
+                    (1) <b>Low-Frequency Precision (δ-band).</b> In the 0 to 5 Hz range, which contains
+                    high-amplitude pathological slow waves and fundamental background rhythms, the generated
+                    spectra closely follow the ground truth across all datasets.
+                </p>
+                <p>
+                    (2) <b>Structural Preservation in Mid-Frequencies.</b> In the α-band (8 to 13 Hz),
+                    especially in TUAB and TUEV, JET reproduces distinct α-band peaks rather than collapsing
+                    to a smooth 1/<em>f</em> profile, demonstrating that the model captures structured
+                    oscillatory activity beyond global spectral trends.
+                </p>
+                <p>
+                    (3) <b>High-Frequency Selectivity.</b> For frequencies above 15 Hz (β/γ bands),
+                    generated spectra exhibit mild attenuation relative to the ground truth, reflecting
+                    selective suppression of unstructured high-frequency components while retaining coherent
+                    neural activity.
+                </p>
+            </div>
         </div>
 
-        <h3>Temporal Dynamics</h3>
-        <p class="caption text-center">
-            <b>Temporal stationarity.</b> Z-normalized temporal envelopes exhibit stable, non-stationary variance dynamics that mirror
-            the natural evolution of biological signals without drift.
+        <div class="analysis-q">▷ Can JET Model Non-Stationary Temporal Dynamics?</div>
+        <p>
+            We examine whether JET captures non-stationary temporal dynamics while avoiding pathological
+            drift over long sequences. The figure shows the temporal evolution of signal envelopes,
+            indicating that the generated signals maintain stable amplitude statistics over time without
+            baseline drift or variance explosion.
         </p>
-        <div class="figure">
-            <img src="figures/temporal_stationarity.svg" alt="Temporal stationarity">
+        <div class="fig-compact fig-right">
+            <div class="fig-col">
+                <img src="figures/temporal_stationarity.svg" alt="Temporal stationarity">
+            </div>
+            <div class="text-col">
+                <p>
+                    (1) <b>Baseline Stability.</b> The median of the generated signals remains centered
+                    around the real signals throughout the entire time course across all datasets,
+                    indicating that the model successfully prevents baseline drift.
+                </p>
+                <p>
+                    (2) <b>Consistent Variance Structure.</b> The inter-percentile bands remain aligned with
+                    the real bands within the window; unlike baselines that suffer from error accumulation,
+                    the flow-based approach preserves the signal's energy profile consistently over time.
+                </p>
+                <p>
+                    (3) <b>Envelope Alignment.</b> The generated variance envelope closely tracks the ground
+                    truth. Notably in TUEV, where the real data exhibits bursty high-amplitude transients,
+                    the generated distribution's outer quantiles effectively cover these regions.
+                </p>
+            </div>
         </div>
 
-        <h3>Amplitude Distribution</h3>
-        <p class="caption text-center">
-            <b>Heavy-tailed amplitude distributions.</b> The generated signals closely match the ground-truth log-density histograms,
-            effectively capturing the heavy-tailed distribution of EEG amplitudes across all datasets.
+        <div class="analysis-q">▷ Can JET Align Heavy-Tailed Distributions?</div>
+        <p>
+            Finally, we investigate the alignment with the heavy-tailed, non-Gaussian distributions typical of
+            pathological populations, ensuring the model avoids mode collapse. We analyze marginal amplitude
+            density and population-level spectral stability.
         </p>
-        <div class="figure">
-            <img src="figures/amplitude_distribution.svg" alt="Amplitude distribution">
+
+        <div class="fig-compact">
+            <div class="fig-col">
+                <img src="figures/amplitude_distribution.svg" alt="Amplitude distribution">
+            </div>
+            <div class="text-col">
+                <p>
+                    (1) <b>Heavy-Tail Reconstruction.</b> Within the valid signal window, the generated
+                    log-density exhibits strong alignment with the ground truth. The model accurately
+                    reproduces both the sharp central peak and the heavy-tailed decay of the amplitude
+                    distribution, demonstrating accurate modeling of EEG signal statistics without being
+                    dominated by sparse outlier noise.
+                </p>
+            </div>
         </div>
 
-        <h3>Population Diversity</h3>
-        <p class="caption text-center">
-            <b>Spectral distribution stability.</b> The shaded percentile bands of generated spectra overlap tightly with real data,
-            indicating that JET captures the full diversity of population-level variance.
-        </p>
-        <div class="figure">
-            <img src="figures/spectral_distribution.svg" alt="Spectral distribution">
+        <div class="fig-compact fig-right">
+            <div class="fig-col">
+                <img src="figures/spectral_distribution.svg" alt="Spectral distribution">
+            </div>
+            <div class="text-col">
+                <p>
+                    (2) <b>Avoidance of Mode Collapse.</b> The substantial overlap between the generated and
+                    real confidence intervals confirms that the model avoids mode collapse. The generated
+                    samples exhibit a wide dispersion in spectral power, mirroring the inter-subject and
+                    inter-state variability found in the ground truth, rather than converging to a single
+                    deterministic profile.
+                </p>
+                <p>
+                    (3) <b>Frequency-Dependent Stochasticity.</b> The model correctly learns the natural
+                    stochasticity of slow-wave activities (below 5 Hz), matching the real confidence
+                    intervals with high precision. Conversely, in higher frequencies, the generated
+                    distribution exhibits a slightly narrower spread, reflecting a conservative constraint
+                    that prioritizes robust neural features over sporadic, high-variance artifacts or noisy
+                    recording conditions.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -580,9 +760,8 @@ blockquote {
     <section id="bibtex">
         <h2>Citation</h2>
         <hr>
-        <pre><code>@article{wang2026jet,
-  title   = {Let EEG Models Learn EEG: Just EEG Transformer
-             for Flow-Matching EEG Generation},
+        <pre><code>@article{wang2026let,
+  title   = {Let EEG Models Learn EEG},
   author  = {Wang, Yifan and Ma, Yijia and Li, Wen and You, Chenyu},
   journal = {ICML},
   year    = {2026}

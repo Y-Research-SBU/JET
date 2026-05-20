@@ -86,7 +86,7 @@ datasets/
 
 ## Training
 
-Train JET on TUAB / TUEV / TUSZ. The scripts use the paper's robust default constraint weights (L<sub>cons</sub>=1, L<sub>tv</sub>=0.1, L<sub>corr</sub>=0.1) and the standard hyperparameters (AdamW, base LR 5e-5, batch size 256, 200 epochs, EMA 0.9999, label-drop 0.1, log-normal time prior with P<sub>mean</sub>=-0.8, P<sub>std</sub>=0.8, t<sub>ε</sub>=5e-2).
+Train JET on TUAB / TUEV / TUSZ directly using the scripts:
 
 ```bash
 bash scripts/train_tuab.sh /path/to/datasets/tuab ./output/tuab
@@ -133,38 +133,21 @@ python inference.py \
 
 Each run writes `eval_batch.npz` (generated traces + matched ground truth + labels) and `metrics.json` (overall + per-class TS-FID) under the output directory.
 
-## Released Checkpoints
+<!-- ## Released Checkpoints
 
 | Dataset | Checkpoint |
 |---|---|
 | TUAB | `ckpt/jet_tuab` |
 | TUEV | `ckpt/jet_tuev` |
-| TUSZ | `ckpt/jet_tusz` |
+| TUSZ | `ckpt/jet_tusz` | -->
 
-All checkpoints use the `JiT-B/16` backbone, 16 EEG channels, and Heun sampling (50 steps).
-
-## Repository Layout
-
-```text
-JET/
-  train_eeg.py        # training entry
-  inference.py        # sampling + TS-FID evaluation
-  denoiser.py         # flow-matching wrapper + principled-constraint losses
-  engine_eeg.py       # per-epoch training loop
-  models/             # raw-ViT backbone
-  data/               # TUAB / TUEV / TUSZ loaders + TS-FID metric
-  util/               # logging + misc helpers
-  scripts/            # local (non-slurm) training & inference shell scripts
-  ckpt/               # released checkpoints (kept locally; distributed separately)
-  docs/               # project page + figures
-```
 
 ## Citation
 
 If you find this work useful, please consider citing:
 
 ```bibtex
-@article{wang2026jet,
+@article{wang2026let,
   title   = {Let EEG Models Learn EEG},
   author  = {Wang, Yifan and Ma, Yijia and Li, Wen and You, Chenyu},
   journal = {ICML},
