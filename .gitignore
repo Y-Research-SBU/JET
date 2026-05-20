@@ -216,3 +216,32 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# JET runtime artifacts
+output/
+output_*/
+results/
+results_*/
+analysis/
+analysis_*/
+logs/
+logs_*/
+fig/
+figs/
+
+# Model/data artifacts
+*.pth
+*.pt
+*.ckpt
+*.npy
+*.npz
+*.pkl
+*.zip
+*.tar
+*.tar.gz
+
+# Local datasets (keep placeholders only)
+datasets/
+
+# Released checkpoints (kept locally, distributed separately)
+ckpt/

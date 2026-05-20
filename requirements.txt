@@ -1,0 +1,9 @@
+torch>=2.0
+numpy
+scipy
+tensorboard
+mne
+tqdm
+einops
+scikit-learn
+matplotlib
