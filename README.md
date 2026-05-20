@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1>Let EEG Models Learn EEG:<br/>Just EEG Transformer for Flow-Matching EEG Generation</h1>
+<h1>Let EEG Models Learn EEG</h1>
 
 Yifan Wang<sup>1</sup>, Yijia Ma<sup>2</sup>, Wen Li<sup>2</sup>, Chenyu You<sup>1</sup>
 
