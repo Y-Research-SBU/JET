@@ -28,7 +28,7 @@ Yifan Wang<sup>1</sup>, Yijia Ma<sup>2</sup>, Wen Li<sup>2</sup>, Chenyu You<sup
 ---
 
 <div align="center">
-<img src="docs/figures/main.png" width="99%">
+<img src="docs/figures/main.svg" width="99%">
 </div>
 
 ## Installation
