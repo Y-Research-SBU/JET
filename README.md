@@ -165,7 +165,7 @@ If you find this work useful, please consider citing:
 
 ```bibtex
 @article{wang2026jet,
-  title   = {Let EEG Models Learn EEG: Just EEG Transformer for Flow-Matching EEG Generation},
+  title   = {Let EEG Models Learn EEG},
   author  = {Wang, Yifan and Ma, Yijia and Li, Wen and You, Chenyu},
   journal = {ICML},
   year    = {2026}
