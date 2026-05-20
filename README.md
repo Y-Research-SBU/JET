@@ -50,7 +50,6 @@ JET trains on three corpora from the [Temple University Hospital EEG project](ht
 | TUEV    | [`tuh_eeg_events`](https://isip.piconepress.com/projects/nedc/data/tuh_eeg/tuh_eeg_events/)                                        | 6-class EEG events (.edf + .rec)     |
 | TUSZ    | [`tuh_eeg_seizure`](https://isip.piconepress.com/projects/nedc/data/tuh_eeg/tuh_eeg_seizure/)                                      | background vs. seizure (.edf + .tse) |
 
-All raw recordings are resampled to 200 Hz, band-pass-filtered to 0.3–75 Hz, notch-filtered at 60 Hz, and re-referenced to a 16-channel bipolar montage. Subjects in each TUH training set are split 80/20 into train/val (the official eval set is used as test). Run the per-dataset script:
 
 ```bash
 python data/preprocess_tuab.py \
@@ -94,7 +93,7 @@ bash scripts/train_tuev.sh /path/to/datasets/tuev ./output/tuev
 bash scripts/train_tusz.sh /path/to/datasets/tusz ./output/tusz
 ```
 
-Or invoke `train_eeg.py` directly:
+Or run `train_eeg.py` directly:
 
 ```bash
 python train_eeg.py \
@@ -111,7 +110,7 @@ Training writes a TensorBoard run and `checkpoint-last.pth` under `--output_dir`
 
 ## Inference
 
-Sample from a checkpoint and compute TS-FID. Released checkpoints ship as **weights only**; `inference.py` applies the paper's reported configuration (Heun sampler, 50 steps, CFG = 1.0, log-normal time prior with P<sub>mean</sub>=-0.8 / P<sub>std</sub>=0.8, t<sub>ε</sub>=5e-2, Gaussian noise prior) — only the dataset path, checkpoint path, and output directory are required.
+Run inference for TUAB / TUEV / TUSZ directly using the scripts:
 
 ```bash
 bash scripts/infer_tuab.sh /path/to/datasets/tuab ./ckpt/jet_tuab ./output/eval_tuab
@@ -119,7 +118,7 @@ bash scripts/infer_tuev.sh /path/to/datasets/tuev ./ckpt/jet_tuev ./output/eval_
 bash scripts/infer_tusz.sh /path/to/datasets/tusz ./ckpt/jet_tusz ./output/eval_tusz
 ```
 
-Or invoke `inference.py` directly:
+Or run `inference.py` directly:
 
 ```bash
 python inference.py \
@@ -131,7 +130,7 @@ python inference.py \
   --eval_split train --eval_label_mode match_gt
 ```
 
-Each run writes `eval_batch.npz` (generated traces + matched ground truth + labels) and `metrics.json` (overall + per-class TS-FID) under the output directory.
+Each run writes `eval_batch.npz` and `metrics.json` under the output directory.
 
 <!-- ## Released Checkpoints
 
