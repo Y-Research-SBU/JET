@@ -7,7 +7,7 @@ Yifan Wang<sup>1</sup>, Yijia Ma<sup>2</sup>, Wen Li<sup>2</sup>, Chenyu You<sup
 <sup>1</sup>Stony Brook University &nbsp; <sup>2</sup>University of Texas Health Center at Houston
 
 <p>
-  <a href="https://arxiv.org/abs/2026.XXXXX">
+  <a href="">
     <img src="https://img.shields.io/badge/ArXiv-Coming%20Soon-B31B1B?style=flat-square&logo=arxiv" alt="arXiv">
   </a>
   <a href="https://y-research-sbu.github.io/JET/">
