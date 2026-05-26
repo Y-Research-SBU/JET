@@ -13,14 +13,10 @@ Yifan Wang<sup>1</sup>, Yijia Ma<sup>2</sup>, Wen Li<sup>2</sup>, Chenyu You<sup
   <a href="https://y-research-sbu.github.io/JET/">
     <img src="https://img.shields.io/badge/Project-Website-4285F4?style=flat-square&logo=googlechrome" alt="Project Page">
   </a>
-  <!--
-  <a href="https://github.com/Y-Research-SBU/JET">
-    <img src="https://img.shields.io/badge/GitHub-Code-006400?style=flat-square&logo=github" alt="GitHub">
+  <a href="https://huggingface.co/Y-Research-Group/JET">
+    <img src="https://img.shields.io/badge/Hugging%20Face-Model-F9A825?style=flat-square&logo=huggingface" alt="Hugging Face">
   </a>
-  <a href="https://github.com/Y-Research-SBU/JET">
-    <img src="https://img.shields.io/badge/Hugging%20Face-Coming%20Soon-F9A825?style=flat-square&logo=huggingface" alt="Hugging Face">
-  </a>
-  -->
+ 
 </p>
 
 </div>
