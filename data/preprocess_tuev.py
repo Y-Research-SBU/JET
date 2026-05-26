@@ -1,14 +1,3 @@
-"""Preprocess the TUEV (TUH Event) corpus into 5-second event pickle clips.
-
-Each TUEV `.edf` file is paired with a `.rec` event annotation; this script
-emits one pickle per event containing a 16-channel x 1000-sample window
-(bipolar montage, resampled to 200 Hz, 0.3-75 Hz band-pass, 60 Hz notch) and
-the original integer event label.
-
-Subjects in the official train set are split 80/20 into train/val; the
-official eval set is used as test.
-"""
-
 import argparse
 import os
 import pickle

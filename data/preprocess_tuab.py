@@ -1,11 +1,3 @@
-"""Preprocess the TUAB (TUH Abnormal EEG) corpus into 10-second pickle clips.
-
-Each output pickle contains a 16-channel x 2000-sample window (bipolar montage,
-resampled to 200 Hz, 0.3-75 Hz band-pass, 60 Hz notch) and a binary label
-(0 = normal, 1 = abnormal). Subjects are split 80/20 into train/val from the
-official TUAB train set; the official eval set is used as test.
-"""
-
 import argparse
 import os
 import pickle
