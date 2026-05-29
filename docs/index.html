@@ -411,6 +411,13 @@ blockquote {
     line-height: 1.55;
     font-size: 17px;
 }
+/* Tighter variant: figure column sized to the image, text fills the rest */
+.fig-compact.fig-tight {
+    grid-template-columns: 1fr 240px;
+}
+.fig-compact.fig-tight .fig-col img {
+    width: 100%;
+}
 @media (max-width: 760px) {
     .fig-compact { grid-template-columns: 1fr; gap: 16px; }
     .fig-compact.fig-right .fig-col { order: 0; }
@@ -568,7 +575,7 @@ blockquote {
             class count, encouraging robust representations of under-represented pathological patterns.
         </p>
 
-        <div class="fig-compact fig-right">
+        <div class="fig-compact fig-right fig-tight">
             <div class="fig-col">
                 <img src="figures/toy_3x4.svg" alt="GAN vs. Diffusion vs. Flow Matching toy comparison">
             </div>

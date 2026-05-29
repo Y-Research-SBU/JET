@@ -38,7 +38,7 @@ pip install -r requirements.txt
 
 ## Data Preprocessing
 
-JET trains on three corpora from the [Temple University Hospital EEG project](https://isip.piconepress.com/projects/tuh_eeg/html/downloads.shtml). Each dataset must be requested and downloaded with the TUH credentials.
+JET trains on three corpora from the [Temple University Hospital EEG project](https://isip.piconepress.com/projects/nedc/html/tuh_eeg/). Each dataset must be requested and downloaded with the TUH credentials.
 
 | Dataset | Source                                                                                                                                          | Notes                                |
 |---------|-------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|
