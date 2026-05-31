@@ -418,6 +418,14 @@ blockquote {
 .fig-compact.fig-tight .fig-col img {
     width: 100%;
 }
+/* 60/40 variant: prose-heavy text column with a larger companion figure */
+.fig-compact.fig-6040 {
+    grid-template-columns: 60fr 40fr;
+    align-items: center;
+}
+.fig-compact.fig-6040 .fig-col img {
+    width: 100%;
+}
 @media (max-width: 760px) {
     .fig-compact { grid-template-columns: 1fr; gap: 16px; }
     .fig-compact.fig-right .fig-col { order: 0; }
@@ -575,21 +583,24 @@ blockquote {
             class count, encouraging robust representations of under-represented pathological patterns.
         </p>
 
-        <div class="fig-compact fig-right fig-tight">
+        <div class="fig-compact fig-right fig-6040">
             <div class="fig-col">
                 <img src="figures/toy_3x4.svg" alt="GAN vs. Diffusion vs. Flow Matching toy comparison">
             </div>
             <div class="text-col">
                 <h3>Why flow matching for EEG?</h3>
                 <p>
-                    <b>GANs</b> map latent noise directly to data space; <b>diffusion models</b> rely on
-                    stochastic denoising dynamics. <b>Flow matching</b> instead learns a smooth, time-dependent
-                    vector field whose integral curves realize optimal transport from a dispersed source to the
-                    target distribution.
+                    <b>GANs</b> map latent noise directly to data space, which makes training unstable and
+                    prone to mode collapse; <b>diffusion models</b> rely on stochastic denoising dynamics that
+                    discretize generation into many steps. <b>Flow matching</b> instead learns a smooth,
+                    time-dependent vector field whose integral curves realize optimal transport from a
+                    dispersed source to the target distribution.
                 </p>
                 <p>
-                    We argue that effective EEG generation requires models that operate directly on the
-                    continuous evolution of neural signals.
+                    Brain activity is non-stationary, evolving smoothly through a high-dimensional state space.
+                    We therefore argue that effective EEG generation requires modeling neural activity as a
+                    <b>continuous dynamical process</b> that operates directly on the continuous evolution of
+                    neural signals, rather than as a sequence of discrete denoising steps.
                 </p>
             </div>
         </div>
